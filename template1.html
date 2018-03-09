@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>JavaScript Expressions</title>
+	
+	<script type="text/javascript">
+	var rightNow = new Date();
+	var currentHour = rightNow.getHours();
+	switch(true)
+	{
+		case (currentHour > 8 && currentHour < 12):
+		document.write("Morning, sunshine!");
+		break;
+		case (currentHour === 12):
+		document.write("Lunch time!");
+		break;
+		case (currentHour > 18 && currentHour < 23):
+		document.write("Fight the urge to siesta");
+		break;
+		default:
+		document.write("its a brandnew day!");
+		break;
+	}
+	</script>
+</head>
+<body>
+	<h1>Variables, Types, Operators and Expressions</h1>
+</body>
+</html>
