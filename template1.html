@@ -6,26 +6,35 @@
 	<title>JavaScript Expressions</title>
 	
 	<script type="text/javascript">
-	var rightNow = new Date();
-	var currentHour = rightNow.getHours();
-	switch(true)
-	{
-		case (currentHour > 8 && currentHour < 12):
-		document.write("Morning, sunshine!");
-		break;
-		case (currentHour === 12):
-		document.write("Lunch time!");
-		break;
-		case (currentHour > 18 && currentHour < 23):
-		document.write("Fight the urge to siesta");
-		break;
-		default:
-		document.write("its a brandnew day!");
-		break;
+	/*
+	function add(){
+		var temp = 0;
+		for(i=0; i < arguments.length; i++)
+		{
+			temp += arguments[i];
+		}
+		return temp
 	}
+	var myvalue = add(1,2,3);
+	alert(myvalue);
+	// function literal
+	var addMe = function(){
+		return arguments[0] + +arguments[1];
+	}
+	var newValue = addMe(1,2);
+	alert(newValue);
+	// anonymous function 
+	var myResult = (function(){
+		return arguments[0] + arguments[1];
+	})(1,2);
+	alert(myResult);*/
+	alert((function(){
+		return arguments[0] + arguments[1];
+	})(1,5));
 	</script>
 </head>
 <body>
 	<h1>Variables, Types, Operators and Expressions</h1>
+	
 </body>
 </html>
