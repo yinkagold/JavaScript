@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Looping</title>
+	<script type="text/javascript">
+		/*
+		var playList = [];
+		playList[0] = "beach";
+		playList[1] = "soul";
+		playList[2] = "myWorship";
+		
+		// while 
+		var i = 0;
+		while (i < playList.length){
+			document.write("<br /> Now Playing: " + playList[i]);
+			i++;
+		}
+		
+		// do while
+		var someResult = 2;
+		do{
+			document.write("Will print 1");
+		}
+		while(someResult) */
+		// for loop 
+		var playList = [];
+		playList[0] = "beach";
+		playList[1] = "soul";
+		playList[2] = "myWorship";
+		//for (var i = 0; i < playList.length; i++)
+		for(var i = playList.length -1 ; i > -1; i--){ // iterates backwards 
+			document.write("<br /> NOw Playing: " + playList[i])
+		}
+		/*
+		// for in 
+		var playList = [];
+		playList[0] = "beach";
+		playList[1] = "soul";
+		playList[2] = "myWorship";
+		for(i in playList){
+		document.write("<br /> NOw Playing: " + playList[i]);
+		}*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
