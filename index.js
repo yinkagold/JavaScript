@@ -1,169 +1,51 @@
-// function to return max from 2 numbers
-function max(a, b) {
-    return (a > b) ? a : b;
-}
-console.log(max(5,2));
-
-// // function to return true if landscape or false if portrait 
-function isLandscape(width, height) {
-    return (width > height);
-}
-console.log(isLandscape(400,200));
-
-// // fizzBuzz
-// // Divisible by 3 => Fizz
-// // Divisble by 5 => Buzz
-// // Divisible by both 3 and 5 => FizzBuzz
-// // Not divisible by 3 or 5 => input
-// // NOt a number => 'Not a number'
-const output = fizzBuzz(15);
-console.log(output);
-
-function fizzBuzz(input) {
-    if (typeof input !== 'number') return NaN;
-    if ((input % 3 === 0) && (input % 5 === 0)) return 'FizzBuzz';
-    if (input % 3 === 0) return 'Fizz';   
-    if (input % 5 === 0) return 'Buzz';
-    return input;
+// Factory function 
+function createCircle(radius) {
+    return {
+        radius,
+        draw() {
+            console.log('draw')
+        }
+    };
 }
 
-// // speed limit = 70
-// // 5 -> 1 point 
-// // Math.floor(1.3)
-// // 12 points -> liscense suspended 
+const circle = createCircle(1);
+console.log(circle);
 
-checkSpeed(130);
-function checkSpeed(speed) {
-    const speedLimit = 70;
-    const kmPerPoint = 5;
+//Constructor function 
 
-    if (speed < speedLimit + kmPerPoint){
-        console.log('Ok');
-        return;
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw')
     }
-    const points =  Math.floor((speed - speedLimit) / kmPerPoint) ;
-    if (points >= 12)
-        console.log('License suspended ');
-    else
-        console.log('Points', points)
 }
 
-// Show whether number is even or odd 
+const myCircle = new Circle(1);
+console.log(myCircle);
 
-showNumber(10);
-
-function showNumber(limit) {
-    for ( let i = 0; i <= limit; i++){
-       const message = (i % 2 === 0 ) ? 'EVEN' : 'ODD';
-       console.log(i, message);
+const circle = {
+    radius: 1,
+    draw() {
+        console.log('draw');
     }
-
-}
-
-
-// count the truthy value in an array 
-const array = [0, null, undefined, '', 2, 3, 4];
-
-console.log(countTruthy(array))
-function countTruthy(array) {
-    let count = 0;
-    for (let value of array)
-    if (value)
-        count ++;
-    return count;
-}
-
-// show string properties properties 
-
-const movie = {
-    title: 'a',
-    releaseYear: 2018,
-    rating: 4.5,
-    director: 'b'
 };
+// getting access to properties and methods in an obj
+for (let key in circle)
+    console.log(key, circle[key]);
 
-showProperties(movie);
+// // for 'of' only works for arrays and maps not objects(is not iterable)
+// //method: Object.keys returns arrays and arrays are iterable  
+for (let key of Object.keys(circle))
+    console.log(key, circle[key]);
 
-function showProperties(obj) {
-    for (let key in obj)
-        if (typeof obj[key] === 'string')
-        console.log(key, obj[key]);
-}
+// // gives the key & value
+for (let entry of Object.entries(circle))
+    console.log(entry)
 
+// cloning properties and obj
+// using the assign
+const another = Object.assign({}, circle);
 
-// sum of multiples of 3 and 5
-// Multiples of 3:3,6,9
-// Multipes of 5: 5, 10
-
-console.log(sum(10));
-
-function sum(limit) {
-    let sum = 0;
-   
-    for (let i = 0; i<=limit; i++)
-        if (i % 3 === 0 || i % 5 === 0)
-        sum += i;
-   
-    return sum;
-}
-
-//Grades 
-// Average = 70
-
-// 1-59: F
-// 60-69: D
-// 70-79: C
-// 80-89: B
-// 90-100: A
-
-const marks = [80, 80, 50];
-
-console.log(calculateGrade(marks));
-
-function calculateGrade(marks) {
-   
-    const average =  calculateAverage(marks);
-    if (average < 60) return 'F';
-    if (average < 70) return 'D';
-    if (average < 80) return 'C';
-    if (average < 90) return'B';
-    return 'A'; 
-}   
-
-function calculateAverage(array) {
-    let sum = 0;
-    for ( let value of array)
-        sum += value;
-   return sum / array.length;
-}
-
-// Stars
-
-showStars(10);
-
-function showStars(rows) {
-    
-    for (let row = 1; row <= rows; row++){
-        let pattern = '';
-        for (let i = 0; i < row; i++)
-            pattern += '*';
-        console.log(pattern);
-    }
-   
-}
-
-//Show Primes
-
-showPrimes(20);
-
-function showPrimes(limits) {
-    for (let number = 2; number<=limits; number++) 
-      if (isPrime(number)) console.log(number);
-}
-
-function isPrime(number) {
-    for (let factor = 2; factor < number; factor++)
-        if (number % factor === 0) 
-            return false;
-    return true;
-}
+// using the spread operator
+const  another = { ...circle };
+console.log(another);
