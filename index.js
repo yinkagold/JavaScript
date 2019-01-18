@@ -1,11 +1,13 @@
-// adding elements
+const numbers = [1, 2, 3, 4];
+let another = numbers;
 
-const numbers = [3, 4];
+//Sol 2
+numbers.length = 0;
 
-numbers.push(5, 6); // adds element to the end
+// Sol 3
+//numbers.splice(0, numbers.length);
 
-numbers.unshift(1, 2); // adds element to the beginning
-
-numbers.splice(2, 0, "a", "b");
+//sol 4
+//while (numbers.length > 0) numbers.pop();
 
 console.log(numbers);
