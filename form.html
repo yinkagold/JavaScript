@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML FORM</title>
+    <meta name="description" content="HTML and CSS" />
+    <meta name="author" content="Olayinka Gold" />
+  </head>
+
+  <body>
+    <form action="http://127.0.0.1/wsd/html_form_check" method="POST">
+      <div class="container">
+        <label for="email"><b>Email: </b></label>
+        <input
+          id="email"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+        /><br />
+
+        <label for="passwd"><b>Password: </b></label>
+        <input
+          id="passwd"
+          type="password"
+          placeholder="Enter Password"
+          name="passwd"
+        /><br />
+        <label for="passwd2"><b>Repeat Password: </b></label>
+        <input
+          id="passwd2"
+          type="password"
+          placeholder="Repeat Password"
+          name="passwd2"
+        />
+        <p>
+          <label for="lang"><b>Language: </b></label>
+          <select name="lang" id="lang">
+            <option value="sv">Swedish</option>
+            <option value="fi">Finnish</option>
+            <option value="no">Norwegian</option>
+            <option value="da">Danish</option>
+            <option value="is">Icelandic</option></select
+          >
+        </p>
+        <input type="checkbox" name="terms" id="terms" />
+        <label for="terms">I accept terms and conditons</label> <br />
+        <button type="submit">Register</button>
+      </div>
+    </form>	
+  </body>
+</html>
